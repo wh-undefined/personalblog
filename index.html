@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>personalblog</title>
+	</head>
+	<style>
+	    *{
+	    	margin: 0;
+	    	padding: 0;
+	    }
+	    .main{
+			position:relative;
+			width:400px;
+			height: 400px;
+			margin:0 auto;
+			margin-top:50px;
+		}
+		#top{
+		  background-color:pink;
+		  width:300px;
+		  height:100px;
+		}
+		#left{
+			background-color: lightblue;
+			width:100px;
+			height:300px;
+			margin-left:0px;
+		}
+		#bottom{
+			background-color: lightgreen;
+			width:300px;
+			height:100px;
+			position:absolute;
+			top:300px;
+			margin-left:100px;
+		}
+		#right{
+			background-color:orchid;
+			width:100px;
+			height:300px;
+			position:absolute;
+			top:0px;
+			margin-left: 300px;
+		}
+		a{
+			font-size:20px;
+			font-weight:200;
+			text-decoration:none;	
+			color: white;
+		}
+		#top a,#bottom a{
+			line-height: 100px;
+		}
+		#left a,#right a{
+			line-height: 300px;
+		}
+		#bottom,#left,#right,#top{
+			text-align: center;
+		}
+		.hidden{
+			display:none;
+		}
+		.on{
+			position:absolute;
+			width:200px;
+			height:200px;
+			top:100px;
+			margin-left:100px;
+			font-size:15px;
+			background-color: gainsboro;
+		}
+		.choose{
+			background-color: black;
+		}
+	</style>
+	<body>
+		<div class="main">
+		  <div id="title"><div id="top"><a href="https://wwwhhhh.github.io/busonline/">公交在线系统</a></div><div id="left"><a href="">爱心小鱼</a></div><div id="bottom"><a href="http://runjs.cn/detail/szznfdj8">runjs上小作品</a></div><div id="right"><a href="http://wwwhhhh.github.io/PostGraduate/">考研网</a></div></div> 
+		 <div id="content"><div class="hidden">
+				公交在线系统：
+				主要是通过百度地图API
+				来实现公交查询功能。<br />
+				主要技术Bootstrap,jquery
+			</div><div class="hidden">
+				爱心小鱼：主要是实现大鱼喂小
+				鱼爱心的小游戏。(正在学习开发中)<br />
+				主要技术HTML5，javascript
+			</div><div class="hidden">
+				runjs小作品：主要是一些发布在
+				runjs上的小练习如选项卡，个
+				性化菜单等<br />
+				主要技术：html+css，javascript
+			</div><div class="hidden">
+				考研网：实现查询学校考试信息，
+				新闻浏览的静态网页<br />
+				主要技术：HTML+CSS，jQuery
+			</div></div>
+		
+		</div>
+	<script>
+       window.onload=function(){
+       	 var titles=document.getElementById("title").childNodes;
+       	 var contents=document.getElementById("content").childNodes;
+        
+       	 for(var i=0;i<titles.length;i++)
+       	 {
+       	 	titles[i].index=i;
+       	 	titles[i].onmouseover=function(){
+       	 		for(var n=0;n<contents.length;n++)
+       	 		{
+       	 			contents[n].className="hidden";
+       	 		}
+       	 	   contents[this.index].className="on"; 
+       	 	   this.className="choose";
+       	 	}
+       	 
+       	 }	 
+       }
+	</script>
+	</body>
+</html>
